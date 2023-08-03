@@ -1,0 +1,39 @@
+
+{{>./layouts/header}}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    
+   
+    <!--컨트롤러에서 넘어오는 model객체에 저장되어서 넘어오는 값을 사용범위 정할 수 있다-->
+    {{#article}} <!--범위값 쓰기 시작은 #을 붙인다 끝내기는 /, /객체변수명-->
+    
+    <tr>
+      
+      <td>{{id}}</td>
+      <td>{{title}}</td>
+      <td>{{content}}</td>
+    </tr>
+    
+    {{/article}} 
+   
+  </tbody>
+</table>
+
+
+ <a href="/Articles" class="btn btn-success">목록보기</a>
+
+
+<!-- 수정하기 링크추가-->
+ <a href="/Articles/{{id}}/edit" class="btn btn-success">수정하기</a>
+<!-- 삭제하기 링크추가-->
+ <a href="/Articles/{{id}}/delete" class="btn btn-success">삭제하기</a>
+{{>./layouts/footer}}
